@@ -1,3 +1,5 @@
+
+
 # This file contains the fastlane.tools configuration
 # You can find the documentation at https://docs.fastlane.tools
 #
@@ -237,12 +239,12 @@ platform :ios do
       verbose: true,
       git_basic_authorization: Base64.strict_encode64("#{GITHUB_REPOSITORY_OWNER}:#{GH_PAT}"),
       app_identifier: [
-        "com.#{TEAMID}.loopkit.Loop", 
-        "com.#{TEAMID}.loopkit.Loop.statuswidget", 
-        "com.#{TEAMID}.loopkit.Loop.LoopWatch.watchkitextension", 
-        "com.#{TEAMID}.loopkit.Loop.LoopWatch", 
-        "com.#{TEAMID}.loopkit.Loop.Loop-Intent-Extension",
-        "com.#{TEAMID}.loopkit.Loop.LoopWidgetExtension",
+        "#{APP_IDENTIFIER}",
+        "#{APP_IDENTIFIER}.statuswidget",
+        "#{APP_IDENTIFIER}.LoopWatch.watchkitextension", 
+        "#{APP_IDENTIFIER}.LoopWatch",
+        "#{APP_IDENTIFIER}.Loop-Intent-Extension",
+        "#{APP_IDENTIFIER}.LoopWidgetExtension",
       ]
     )
   end
@@ -262,7 +264,7 @@ platform :ios do
       bundle_id = Spaceship::ConnectAPI::BundleId.find(identifier)
     end
 
-    find_bundle_id("com.#{TEAMID}.loopkit.Loop")
+    find_bundle_id("#{APP_IDENTIFIER}")
 
     match(
       type: "appstore",
