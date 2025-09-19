@@ -89,7 +89,7 @@ platform :ios do
 
     update_code_signing_settings(
       path: "#{GITHUB_WORKSPACE}/Loop/Loop.xcodeproj",
-      profile_name: mapping["#{APP_IDENTIFIER}"]
+      profile_name: mapping["#{APP_IDENTIFIER}"],
       code_sign_identity: "iPhone Distribution",
       targets: ["Loop"]
     )
