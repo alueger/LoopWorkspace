@@ -13,7 +13,6 @@
 #
 
 default_platform(:ios)
-#MAIN_APP_BUNDLE_IDENTIFIER = ENV["MAIN_APP_BUNDLE_IDENTIFIER"]
 
 TEAMID = ENV["TEAMID"]
 GH_PAT = ENV["GH_PAT"]
@@ -26,9 +25,8 @@ DEVICE_NAME = ENV["DEVICE_NAME"]
 DEVICE_ID = ENV["DEVICE_ID"]
 ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
 
-#APP_IDENTIFIER = ENV.fetch('MAIN_APP_BUNDLE_IDENTIFIER') { "com.#{TEAMID}.loopkit.Loop" }
-
-APP_IDENTIFIERˋ= "org.lueger.422BA4J9NL.loopkit.Loop"
+#APP_IDENTIFIERˋ= "org.lueger.422BA4J9NL.loopkit.Loop"
+APP_IDENTIFIER = ENV.fetch('APP_IDENTIFIER') { "org.lueger.#{TEAMID}.loopkit.Loop" }
 
 if ENV['BUILD_GROUP']
   File.write('../ConfigOverride.xcconfig', "COPYRIGHT_NOTICE = #{ENV['BUILD_GROUP']}\n", mode: 'a')
