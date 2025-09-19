@@ -29,9 +29,7 @@ if ENV['BUILD_GROUP']
   File.write('../ConfigOverride.xcconfig', "COPYRIGHT_NOTICE = #{ENV['BUILD_GROUP']}\n", mode: 'a')
 end
 
-if #{APP_IDENTIFIER} != "com.#{TEAMID}.loopkit.Loop"
-  File.write('../ConfigOverride.xcconfig', "BUNDLE_IDENTIFIER = #{APP_IDENTIFIER}\n", mode: 'a')
-end
+
 
 platform :ios do
   desc "Build Loop"
